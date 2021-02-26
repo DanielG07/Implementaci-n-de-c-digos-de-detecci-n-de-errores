@@ -2,12 +2,6 @@ function [bitErroneos, tramasErroneas] = checksum(NR, palabraDatos,filas)
 %clear all
 %% Codigo de revision de checksum.
 
-
-% Aplicamos la logica para agregar el bit de paridad, donde vamos a contar
-% el numero de 1 que tenemos en cada fila, en caso de tener un valor de
-% unos par agregamos un 0 en el bit de paridad, en caso contrario agregamos
-% un 0.
-
 palabraCodigo = palabraDatos;
 bitsNuevos = [0 0 0 0];
 
@@ -69,7 +63,7 @@ end
 palabraCodigo = [palabraCodigo bitsNuevos];
 
 % Aplicamos ahora una inversion de los bits para la simulacion de errores
-% de transmisión. La variable NR va a ser nuestro valor de referencia que
+% de transmisiÃ³n. La variable NR va a ser nuestro valor de referencia que
 % puede ir entre [0.001 0.005 0.01 0.05 0.1]. La variable noCambios nos
 % ayuda a ver el numero de cambios que hubo al hacer la simulacion del
 % efecto de errores y la variable ubicacionCambios nos ayuda a conocer la
@@ -96,8 +90,8 @@ end
 ubicacionErroresMediobit(1,:) = [];
 
 % Ahora nos vamos del lado del receptor para ver el funcionamiento de la
-% deteccion de errorres de este código. Primero vamos a implementar el
-% verificador del código de paridad simple en el receptor.
+% deteccion de errorres de este cÃ³digo. Primero vamos a implementar el
+% verificador del cÃ³digo de paridad simple en el receptor.
 
 palabraRecibida = palabraTransmitida;
 ubicacionErroresTramaRx = [0 0];
